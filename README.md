@@ -23,7 +23,7 @@ This is a book search engine application that uses Google Books API and allows u
 
 This application allows a user to search for books, save books to your saved book list and remove books from the saved book list.
 
-Link to deployed website - https://dashboard.heroku.com/apps/green-juice 
+Link to deployed website - https://green-juice-898a0432b808.herokuapp.com/ 
 
 ![Book Search Engine screenshot](./assets/book-search-engine-screenshot.png)
 
