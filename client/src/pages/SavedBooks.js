@@ -8,13 +8,13 @@ import {
 } from 'react-bootstrap';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries';
+import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
+  const { data, loading } = useQuery(GET_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
   
   const userData = data?.me || [];
@@ -34,11 +34,12 @@ const SavedBooks = () => {
       removeBookId(bookId);
     } catch (err) {
       console.error(err);
+      // console.error(error);
     }
   };
 
   // if data isn't here yet, say so
-  if (loading) {
+  if (loading || !userData.savedBooks) {
     return <h2>LOADING...</h2>;
   }
 

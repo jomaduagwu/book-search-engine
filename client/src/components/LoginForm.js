@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [login, { loading }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -43,6 +43,10 @@ const LoginForm = () => {
       password: '',
     });
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
