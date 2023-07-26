@@ -1,13 +1,11 @@
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection'); 
-// const routes = require('./routes'); // don't need?
+const routes = require('./routes'); 
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 
-// implement the Apollo Server and apply it to the Express server as middleware
 
-// new additiion
 const { typeDefs, resolvers } = require('./schemas');
 
 
